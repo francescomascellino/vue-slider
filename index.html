@@ -16,10 +16,10 @@
             <div class="container">
                 <div class="slider-wrapper" tabindex="0">
 
-                    <div class="item">
+                    <div class="item" @mouseover="stopAutoplay()" @mouseleave="loop()">
 
                         <img :src="slides[activeImage].image"
-                            :alt="slides[activeImage].title" />
+                            :alt="slides[activeImage].title"/>
 
                         <div class="text">
                             <h3>{{slides[activeImage].title}}</h3>

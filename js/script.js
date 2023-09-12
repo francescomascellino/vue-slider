@@ -50,6 +50,10 @@ createApp({
 
             autoplaySpeed: 3000,
 
+            loopDetector: true,
+
+            autoplay: "",
+
             slides: [
                 {
                     image: 'img/01.webp',
@@ -107,18 +111,25 @@ createApp({
 
         // 2 - applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente 
         loop() {
-            setInterval(() => { this.next() }, this.autoplaySpeed)
+
+            this.autoplay = setInterval(() => { this.next() }, this.autoplaySpeed);
+
         },
+
+        stopAutoplay() {
+            console.log("autoplay =", this.autoplay);
+            clearInterval(this.autoplay)
+        }
 
     },
 
     // - LA FUNZIONE LOOP VIENE CHIAMATA NON APPENA APP è MOUNTED
     mounted() {
+        //AUTOPLAY STARTS AFTER 3s
         setTimeout(this.loop(), this.autoplaySpeed);
     },
 
 }).mount('#app')
 
-// - applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente 
 
 
