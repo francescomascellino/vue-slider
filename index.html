@@ -41,13 +41,25 @@
                         <div class="prev" @click="prev()"></div>
                         <div class="next" @click="next()"></div>
 
-                        <div class="thumb active"
-                            v-for="(element, index) in slides"
-                            :key>
+                        <template v-for="(element, index) in slides"
+                            :key="index" v-if="index == activeImage">
+                            <div class="thumb active">
 
-                            <img :src="element.image" :alt="element.title" />
+                                <img :src="element.image" :alt="element.title" />
 
-                        </div>
+                            </div>
+
+                        </template>
+
+                        <template v-for="(element, index) in slides"
+                            :key="index" v-else>
+                            <div class="thumb">
+
+                                <img :src="element.image" :alt="element.title" />
+
+                            </div>
+
+                        </template>
 
                     </div>
 
