@@ -81,7 +81,7 @@ createApp({
             if (this.activeImage > this.slides.length - 1) {
                 this.activeImage = 0;
             }
-            console.log(this.activeImage);
+            console.log("ActiveImage:", this.activeImage);
         },
 
         prev() {
@@ -89,7 +89,7 @@ createApp({
             if (this.activeImage < 0) {
                 this.activeImage = this.slides.length - 1;
             }
-            console.log(this.activeImage);
+            console.log("ActiveImage:", this.activeImage);
         },
 
     }
