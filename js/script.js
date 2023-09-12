@@ -114,7 +114,7 @@ createApp({
 
     // - LA FUNZIONE LOOP VIENE CHIAMATA NON APPENA APP è MOUNTED
     mounted() {
-        this.loop();
+        setTimeout(this.loop(), this.autoplaySpeed);
     },
 
 }).mount('#app')
