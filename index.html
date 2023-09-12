@@ -23,6 +23,7 @@
 
                         <div class="text">
                             <h3>{{slides[activeImage].title}}</h3>
+                            <p>ACTIVEIMAGE: {{activeImage}}</p>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur
                                 adipisicing elit. Et temporibus voluptatum
@@ -41,25 +42,50 @@
                         <div class="prev" @click="prev()"></div>
                         <div class="next" @click="next()"></div>
 
-                        <template v-for="(element, index) in slides"
-                            :key="index" v-if="index = activeImage">
-                            <span>INDEX: {{index}} - ACTIVEIMAGE:
-                                {{activeImage}}</span>
-                            <div class="thumb active">
+                        <!-- v-if/else TEST -->
+                        <!-- <template v-for="(element, index) in slides"
+                            :key="index"> -->
 
-                                <img :src="element.image" :alt="element.title" />
+                            <!-- v-if + v-else NON POSSONO ESSERE USATI INSIEME v-for. v-for ACCETTA SOLO UNA CONDIZIONE, QUINDI VANNOINSERITI IN UN NODO SEPARATO -->
+                            <!-- <div v-if="index == activeImage">
+
+                                <span>INDEX: {{index}} - ACTIVEIMAGE:
+                                    {{activeImage}}</span>
+
+                                <div class="thumb active">
+
+                                    <img :src="element.image"
+                                        :alt="element.title" />
+
+                                </div>
 
                             </div>
 
+                            <div v-else>
+
+                                <span>INDEX: {{index}} - ACTIVEIMAGE:
+                                    {{activeImage}}</span>
+
+                                <div class="thumb">
+
+                                    <img :src="element.image"
+                                        :alt="element.title" />
+
+                                </div>
+
+                            </div> -->
+
                         </template>
 
+                        <!-- TERNARY OPERATOR TEST -->
                         <template v-for="(element, index) in slides"
-                            :key="index" v-else>
-                            <span>INDEX: {{index}} - ACTIVEIMAGE:
-                                {{activeImage}}</span>
-                            <div class="thumb">
+                            :key="index">
 
-                                <img :src="element.image" :alt="element.title" />
+                            <div class="thumb"
+                                :class="index == activeImage ? 'active' : ''">
+
+                                <img :src="element.image"
+                                    :alt="element.title" />
 
                             </div>
 

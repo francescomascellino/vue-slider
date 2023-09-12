@@ -46,6 +46,7 @@ createApp({
 
             //DICHIARIAMO UNA VARIABILE activeImage DA USARE COME INDICE
             activeImage: 0,
+
             slides: [
                 {
                     image: 'img/01.webp',
