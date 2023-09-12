@@ -85,11 +85,13 @@
                                 :class="index == activeImage ? 'active' : ''">
 
                                 <img :src="element.image"
-                                    :alt="element.title" />
+                                    :alt="element.title" @click="turnToActive(index)" :id="index"/>
 
                             </div>
 
                         </template>
+
+                        <input type="number" min="0" max="4" v-model="activeImage">
 
                     </div>
 

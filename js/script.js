@@ -92,6 +92,13 @@ createApp({
             console.log("ActiveImage:", this.activeImage);
         },
 
+        turnToActive(index) {
+
+            console.log("INDEX OF CLICKED IMAGE:", index);
+            this.activeImage = index;
+
+        }
+
     }
 
 }).mount('#app')

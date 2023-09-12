@@ -35,7 +35,7 @@
 .thumbs {
     float: left;
     height: 300px;
-    /* background: #000; */
+    background: #000;
     position: relative;
 }
 
