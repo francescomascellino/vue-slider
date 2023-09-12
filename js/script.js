@@ -50,10 +50,6 @@ createApp({
 
             autoplaySpeed: 3000,
 
-            loopDetector: true,
-
-            autoplay: "",
-
             slides: [
                 {
                     image: 'img/01.webp',
@@ -116,6 +112,7 @@ createApp({
 
         },
 
+        //FUNZIONE PER FERMARE AUTOPLAY
         stopAutoplay() {
             console.log("autoplay =", this.autoplay);
             clearInterval(this.autoplay)

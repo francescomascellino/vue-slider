@@ -16,6 +16,7 @@
             <div class="container">
                 <div class="slider-wrapper" tabindex="0">
 
+                    <!-- BONUS 3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce -->
                     <div class="item" @mouseover="stopAutoplay()" @mouseleave="loop()">
 
                         <img :src="slides[activeImage].image"
