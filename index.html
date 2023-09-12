@@ -37,23 +37,18 @@
                     </div>
 
                     <div class="thumbs">
+
                         <div class="prev" @click="prev()"></div>
                         <div class="next" @click="next()"></div>
-                        <div class="thumb active">
-                            <img src="img/01.webp" alt="Svezia" />
+
+                        <div class="thumb active"
+                            v-for="(element, index) in slides"
+                            :key>
+
+                            <img :src="element.image" :alt="element.title" />
+
                         </div>
-                        <div class="thumb">
-                            <img src="img/02.webp" alt="Ratchet & Clank" />
-                        </div>
-                        <div class="thumb">
-                            <img src="img/03.webp" alt="Fortnite" />
-                        </div>
-                        <div class="thumb">
-                            <img src="img/04.webp" alt="Stray" />
-                        </div>
-                        <div class="thumb">
-                            <img src="img/05.webp" alt="Avengers" />
-                        </div>
+
                     </div>
 
                 </div>
