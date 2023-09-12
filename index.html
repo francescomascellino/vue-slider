@@ -42,7 +42,9 @@
                         <div class="next" @click="next()"></div>
 
                         <template v-for="(element, index) in slides"
-                            :key="index" v-if="index == activeImage">
+                            :key="index" v-if="index = activeImage">
+                            <span>INDEX: {{index}} - ACTIVEIMAGE:
+                                {{activeImage}}</span>
                             <div class="thumb active">
 
                                 <img :src="element.image" :alt="element.title" />
@@ -53,6 +55,8 @@
 
                         <template v-for="(element, index) in slides"
                             :key="index" v-else>
+                            <span>INDEX: {{index}} - ACTIVEIMAGE:
+                                {{activeImage}}</span>
                             <div class="thumb">
 
                                 <img :src="element.image" :alt="element.title" />
