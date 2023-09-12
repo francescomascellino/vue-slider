@@ -41,11 +41,14 @@ il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'es
 const { createApp } = Vue
 
 createApp({
+
     data() {
         return {
 
             //DICHIARIAMO UNA VARIABILE activeImage DA USARE COME INDICE
             activeImage: 0,
+
+            autoplaySpeed: 3000,
 
             slides: [
                 {
@@ -92,13 +95,30 @@ createApp({
             console.log("ActiveImage:", this.activeImage);
         },
 
+        // BONUS 1- al click su una thumb, visualizzare in grande l'immagine corrispondente
+        // LA FUNZIONE DEVE USARE L'INDICE DELL'ELEMENTO A CUI E' BINDATA
         turnToActive(index) {
 
             console.log("INDEX OF CLICKED IMAGE:", index);
+            //IN UNA FUNZIONE this FA RIFERIMENO ALLO SCOPE GLOBALE, NEL QUALE TROVIAMO LA VARIABILE activeImage
             this.activeImage = index;
 
-        }
+        },
 
-    }
+        // 2 - applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente 
+        loop() {
+            setInterval(() => { this.next() }, this.autoplaySpeed)
+        },
+
+    },
+
+    // - LA FUNZIONE LOOP VIENE CHIAMATA NON APPENA APP è MOUNTED
+    mounted() {
+        this.loop();
+    },
 
 }).mount('#app')
+
+// - applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente 
+
+

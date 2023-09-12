@@ -84,6 +84,9 @@
                             <div class="thumb"
                                 :class="index == activeImage ? 'active' : ''">
 
+<!-- BONUS 1- al click su una thumb, visualizzare in grande l'immagine corrispondente -->
+
+                                <!-- NEL v-on USIAMO COME PARAMETRO index -->
                                 <img :src="element.image"
                                     :alt="element.title" @click="turnToActive(index)" :id="index"/>
 
