@@ -38,8 +38,6 @@ il riciclo spesso va a braccetto con le funzioni! Sapendole sfruttare bene, l'es
     }
 ]; */
 
-console.log(slides);
-
 const { createApp } = Vue
 
 createApp({
@@ -51,7 +49,7 @@ createApp({
             slides: [
                 {
                     image: 'img/01.webp',
-                    title: 'Marvel\'s Spiderman Miles Morale',
+                    title: 'Marvel\'s Spiderman Miles Morales',
                     text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
                 }, {
                     image: 'img/02.webp',
@@ -80,7 +78,7 @@ createApp({
         next() {
             this.activeImage++;
             console.log(this);
-            if (this.activeImage > this.movie.images.length - 1) {
+            if (this.activeImage > this.slides.length - 1) {
                 this.activeImage = 0;
             }
         },
@@ -88,7 +86,7 @@ createApp({
         prev() {
             this.activeImage--;
             if (this.activeImage < 0) {
-                this.activeImage = this.movie.images.length - 1;
+                this.activeImage = this.slides.length - 1;
             }
         },
 
